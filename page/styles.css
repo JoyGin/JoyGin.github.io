@@ -1,0 +1,50 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header, nav, main, footer {
+  padding: 20px;
+  margin: 10px;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
+
+nav {
+  background: #555;
+  color: #fff;
+}
+
+main {
+  background: #fff;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
+
+/* 添加到 styles.css 中 */
+@media (max-width: 600px) {
+  header, nav, main, footer {
+      padding: 10px;
+      margin: 5px;
+  }
+  /* 其他针对移动设备的样式 */
+}
+
+.center-both-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
