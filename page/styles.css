@@ -33,6 +33,20 @@ footer {
   text-align: center;
 }
 
+.center-both-flex {
+  flex-direction: column
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  margin: 20px; 
+}
+
+.center-both-flex a {
+  flex: 1 0 100%; /* 让<a>标签占据全部可用空间 */
+}
+
 /* 添加到 styles.css 中 */
 @media (max-width: 600px) {
   header, nav, main, footer {
@@ -40,13 +54,4 @@ footer {
       margin: 5px;
   }
   /* 其他针对移动设备的样式 */
-}
-
-.center-both-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-
-  margin: 20px;
 }

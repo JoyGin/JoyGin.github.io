@@ -2,21 +2,56 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>测试</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div class="center-both-flex">
-    请点击右上角菜单按钮，在浏览器中打开该界面，启动腾讯iOA
+    <div class="center-both-flex">
+        请点击右上角菜单按钮，在浏览器中打开该界面，启动腾讯iOA
 
-    <a href="https://applink.feishu.cn/client/web_app/open?appId=cli_a5f07c61c43e1013">跳转飞书</a>
-    <a href="https://applink.dingtalk.com/page/h5_app_open?appId=2828205088&corpId=ding19fd27183e470371ffe93478753d9884&appType=2">跳转钉钉</a>
+        <a href="https://applink.feishu.cn/client/web_app/open?appId=cli_a5f07c61c43e1013">跳转飞书</a>
+        <a
+            href="https://applink.dingtalk.com/page/h5_app_open?appId=2828205088&corpId=ding19fd27183e470371ffe93478753d9884&appType=2">跳转钉钉</a>
+        <!--<a href="https://applink.twinklestar.tech/openngn">跳转iOA</a>-->
+        <!-- <a href="https://applink.makeatry.com/openngn">跳转iOA(appLink方式)</a> -->
+        <a href="ioazt://mini-iam/auth/sso">跳转iOA(自定义schema方式)</a>
+    </div>
+    <script src="script.js"></script>
 
-  </div>
-  <script src="script.js"></script>
+    <script>
+        // 获取当前页面url的所有参数，拼接到这个链接后面：https://applink.makeatry.com/openngn，然后添加一个a标签到div中，a标签的href为刚才拼接得到的链接
+        // 获取当前页面的URL对象
+        const currentUrl = new URL(window.location.href);
+
+        // 获取当前页面的查询参数
+        const searchParams = currentUrl.searchParams;
+
+        // 创建一个新的URL对象，用于百度的URL
+        const baiduUrl = new URL('https://applink.makeatry.com/openngn');
+
+        // 将当前页面的查询参数追加到百度的URL上
+        searchParams.forEach((value, key) => {
+            baiduUrl.searchParams.append(key, value);
+        });
+
+        // 获取拼接后的完整URL
+        const fullBaiduUrl = baiduUrl.href;
+
+        console.log(fullBaiduUrl); 
+
+        // 创建一个a标签元素
+        const aElement = document.createElement("a");
+
+        // 设置a标签的属性和值
+        aElement.setAttribute("href", fullBaiduUrl);
+        aElement.innerText = "跳转iOA(appLink方式)";
+
+        // 将a标签插入到指定的div中（请替换为实际的div选择器）
+        document.querySelector(".center-both-flex").appendChild(aElement);
+    </script>
 </body>
 
 </html>
