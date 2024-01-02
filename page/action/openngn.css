@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ /* 我想要取消所有a标签原本的样式，然后将其背景设置为白色，边框设置为蓝色，并且边框大小为1px，文字颜色为蓝色 */
+ a {
+  background-color: white; /* 设置背景颜色为白色 */
+  border: 2px solid #005AFF; /* 设置边框宽度为2px，边框类型为实线，边框颜色为蓝色 */
+
+  margin-top: 20px;
+
+  text-decoration: none; /* 删除链接下划线 */
+  color: #005AFF;
+  text-align: center;
+  font-family: PingFang SC;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
