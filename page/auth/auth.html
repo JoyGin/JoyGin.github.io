@@ -10,7 +10,9 @@
 
 <body>
     <div class="container">
-        <a href="ioazt://sso-login/secondaryAuth/wxwork?loginId=123">企微二次认证（成功）</a>
-        <a href="ioazt://sso-login/secondaryAuth/wxwork?loginId=321">企微二次认证（失败）</a>
+        <a href="ioazt://sso-login/secondaryAuth/wxwork?address=www.test.com&userid=123&access_token=123">企微二次认证（成功）</a>
+        <a href="ioazt://sso-login/secondaryAuth/wxwork?address=www.test1.com&userid=123&access_token=123">企微二次认证（地址不正确失败）</a>
+        <a href="ioazt://sso-login/secondaryAuth/wxwork?address=www.test.com&userid=321&access_token=123">企微二次认证（userId不正确失败）</a>
+        <a href="ioazt://sso-login/secondaryAuth/wxwork?address=www.test.com&userid=123&access_token=321">企微二次认证（token不正确失败）</a>
     </div>
 </body>
